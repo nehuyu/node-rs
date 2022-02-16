@@ -12,6 +12,7 @@ export function loadBinding(dirname: string, filename = 'index', packageName?: s
   let additionalErrorMsg = ''
   for (const triple of triples) {
     // resolve in node_modules
+    console.log(triple)
     if (packageName) {
       try {
         return require(require.resolve(`${packageName}-${triple.platformArchABI}`, { paths: [dirname] }))
